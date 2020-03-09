@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/PRATIK/Desktop/SQL/Group Summary Statistics/jobs.db" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2767"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="recent_grads"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">select Major_category, AVG(ShareWomen) from recent_grads
+GROUP by Major_category</sql><sql name="SQL 2">SELECT Major_category, AVG(Employed)/AVG(Total) share_employed from recent_grads
+group by Major_category</sql><sql name="SQL 3">SELECT Major_category, AVG(Low_wage_jobs)/AVG(Total) AS share_low_wage
+FROM recent_grads
+GROUP BY Major_category
+HAVING share_low_wage &gt; .1</sql><sql name="SQL 4">SELECT ROUND(ShareWomen, 4), Major_category FROM recent_grads
+LIMIT 10</sql><sql name="SQL 5">SELECT Major_category, ROUND(AVG(College_jobs)/AVG(Total), 3) share_degree_jobs
+FROM recent_grads
+GROUP By Major_category
+HAVING share_degree_jobs&lt;.3</sql><sql name="SQL 6">SELECT Major_category, CAST(SUM(Women) as Float)/CAST(SUM(Total) as Float)
+AS SW FROM recent_grads
+GROUP BY Major_category
+ORDER BY SW ASC</sql><current_tab id="5"/></tab_sql></sqlb_project>
